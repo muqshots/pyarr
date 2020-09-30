@@ -19,3 +19,4 @@ build
 .devcontainer/*
 !.devcontainer/recommended-devcontainer.json
 !.devcontainer/recommended-Dockerfile
+.vscode
