@@ -6,5 +6,3 @@ from nose.tools import assert_is_not_none
 
 # Local imports...
 from PyArr import RadarrAPI
-
-def test_
