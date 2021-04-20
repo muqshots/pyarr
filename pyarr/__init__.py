@@ -1,3 +1,5 @@
+from .client import Client
+
 from .request_api import RequestAPI
 from .sonarr_api import SonarrAPI
 from .radarr_api_v1 import RadarrAPIv1
