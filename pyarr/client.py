@@ -2,10 +2,10 @@ from typing import Any, Type, Union
 
 from aiohttp import ClientSession, TCPConnector
 
-from aiosnow.config import ConfigSchema
-from aiosnow.exceptions import MissingClientAuthentication
-from aiosnow.request import Response
-from aiosnow.utils import get_url
+from pyarr.config import ConfigSchema
+from pyarr.exceptions import MissingClientAuthentication
+from pyarr.request import Response
+from pyarr.utils import get_url
 
 
 class Client:
