@@ -12,6 +12,7 @@ class Client:
     """Client for communicating with Sonarr / Radarr
     Parses client config and provides a ClientSession factory.
     Args:
+        platform: sonarr or radarr
         address: Instance TCP address
         api_key: API Key
         use_ssl: Whether to use SSL
@@ -24,6 +25,7 @@ class Client:
 
     def __init__(
         self,
+        platform: str,
         address: Union[str, bytes],
         api_key: str,
         use_ssl: bool = True,
@@ -32,6 +34,12 @@ class Client:
         response_cls: Type[Response] = None,
         session_cls: Type[ClientSession] = None,
     ):
+        if self.platform:
+            self._api_key = self.config.session.api_key  # type: ignore
+        else:
+            raise MissingClientAuthentication(
+                "No known authentication methods provided"
+            )
         # Load config
         self.config = ConfigSchema(many=False).load(
             dict(
